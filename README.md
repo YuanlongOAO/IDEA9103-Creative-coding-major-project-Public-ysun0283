@@ -14,9 +14,9 @@ I chose to animate the image using **Perlin noise**.
 2. **Overlaying Perlin-driven color dot motion trajectories onto the mosaic surface**
 Each block starts from its **base colour**, sampled from the centre pixel of the corresponding region in the original image.
 For each block, I compute a **“target colour”** using **Perlin noise in image space**:
-  I normalise the block’s top-left position to \[0, 1\] as `(nx, ny)`.
-  I feed `(nx, ny)` into `noise(nx * scale, ny * scale + offsets)` to get three independent noise values for R, G, B.
-  These noise values are mapped to 0–255 and then **blended with the original colour** using `lerp(base, noiseColour, 0.7)`, so the target colour is different but still related to the source.
+  I normalise the block’s top-left position to \[0, 1\] as (nx, ny).
+  I feed (nx, ny) into noise(nx * scale, ny * scale + offsets) to get three independent noise values for R, G, B.
+  These noise values are mapped to 0–255 and then **blended with the original colour** using lerp(base, noiseColour, 0.7), so the target colour is different but still related to the source.
 
 ### Reference Inspiration
 Inspired by The Coding Train's “Perlin Noise Flowfield” challenge, where particles move through a noise-based vector field leaving continuous trails, my trajectory system similarly employs time-varying Perlin noise. However, instead of using a generic palette, I sampled colors directly from Broadway Boogie Woogie, making the trails appear as if playful splashes of color from the painting were moving across the screen.
