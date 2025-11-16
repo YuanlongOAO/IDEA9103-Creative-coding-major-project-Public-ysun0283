@@ -12,6 +12,7 @@ I chose to animate the image using **Perlin noise**.
 ### Animation Components
 1. **RGB color transformation for each block**
 2. **Overlaying Perlin-driven color dot motion trajectories onto the mosaic surface**
+   
 Each block starts from its **base colour**, sampled from the centre pixel of the corresponding region in the original image.
 For each block, I compute a **“target colour”** using **Perlin noise in image space**:
   I normalise the block’s top-left position to \[0, 1\] as (nx, ny).
